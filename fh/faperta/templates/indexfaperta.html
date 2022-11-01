@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faperta</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <img  src="{% static "images/cropped-logofaperta.png" %}" alt="Faperta" width="100%">
+    
+</head>
+<body>
+    <h1>FAKULTAS PERTANIAN</h1>
+    <h2>Terdiri dari beberapa prodi, yaitu:</h2>
+    <p>Prodi Agroteknologi, Prodi Agrobisnis, Prodi Perikanan</p>
+    <br>
+    <h2>Daftar Nama Dosen FAPERTA</h2>
+    <table class="table table-success table-striped">
+        <tr>
+            <th>Nip</th>
+            <th>Nama</th>
+            <th>Tanggal_lahir</th>
+            <th>Foto</th>
+            <th>Email</th>
+            <th>Prodi</th>
+            <th>Alamat</th>
+        </tr>
+        {% for dosen in dataDosen %}
+        <tr>
+            <th>{{ dosen.nip }}</th>
+            <th>{{ dosen.nama }}</th>
+            <th>{{ dosen.tanggal_lahir }}</th>
+            <th>{{ dosen.foto }}</th>
+            <th>{{ dosen.email }}</th>
+            <th>{{ dosen.prodi }}</th>
+            <th>{{ dosen.alamat }}</th>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <h2>Daftar Nama Tenaga Pendidik FAPERTA</h2>
+    <table class="table table-success table-striped">
+        <tr>
+            <th>Nip</th>
+            <th>Nama</th>
+            <th>Tanggal_lahir</th>
+            <th>Foto</th>
+            <th>Email</th>
+            <th>Unit</th>
+            <th>Alamat</th>
+        </tr>
+        {% for tenagapendidik in dataTenagaPendidik %}
+        <tr>
+            <th>{{ tenagapendidik.nip }}</th>
+            <th>{{ tenagapendidik.nama }}</th>
+            <th>{{ tenagapendidik.tanggal_lahir }}</th>
+            <th>{{ tenagapendidik.foto }}</th>
+            <th>{{ tenagapendidik.email }}</th>
+            <th>{{ tenagapendidik.unit }}</th>
+            <th>{{ tenagapendidik.alamat }}</th>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <h2>Daftar Nama Mahasiswa FAPERTA</h2>
+    <table class="table table-success table-denger">
+        <tr>
+            <th>Nim</th>
+            <th>Nama</th>
+            <th>Tanggal_lahir</th>
+            <th>Foto</th>
+            <th>Email</th>
+            <th>Prodi</th>
+            <th>Alamat</th>
+        </tr>
+        {% for mahasiswa in dataMahasiswa %}
+        <tr>
+            <th>{{ mahasiswa.nim }}</th>
+            <th>{{ mahasiswa.nama }}</th>
+            <th>{{ mahasiswa.tanggal_lahir }}</th>
+            <th>{{ mahasiswa.foto }}</th>
+            <th>{{ mahasiswa.email }}</th>
+            <th>{{ mahasiswa.prodi }}</th>
+            <th>{{ mahasiswa.alamat }}</th>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
+</body>
+</html>
